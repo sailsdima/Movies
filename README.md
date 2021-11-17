@@ -11,3 +11,4 @@ _MainFragment_ shows the list of shows loaded from remote api (https://api.tvmaz
 
 _ShowFragment_ shows detailed info about show. It uploads full model of show and it`s episodes from remote api and displays it. Also this screen contains a button to add show to favorites.
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/20478957/142278748-ae1f2056-d1d5-4984-93bf-40c65b9fa24f.gif)
