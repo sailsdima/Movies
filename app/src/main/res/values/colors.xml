@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="yellow">#FFCC38</color>
+    <color name="gray">#DDDDDD</color>
+    <color name="moon_raker">#D6DDF8</color>
+    <color name="tuna">#323237</color>
+    <color name="text_color_dark">@color/tuna</color>
+    <color name="text_color_light">@color/gray</color>
+    <color name="light_gray">#F5F5F5</color>
 </resources>

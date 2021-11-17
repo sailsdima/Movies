@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="?selectableItemBackground">
+
+    <View
+        android:id="@+id/vBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_item_show"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivCover" />
+
+    <ImageView
+        android:id="@+id/ivCover"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_item_show"
+        android:src="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="@id/vBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/vBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivCover"
+        app:layout_constraintTop_toTopOf="@id/vBackground">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/nexa_bold"
+            android:maxLines="2"
+            android:textColor="@color/text_color_dark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/rvGenres"
+            app:layout_constraintEnd_toStartOf="@id/tvRate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Fight club" />
+
+        <TextView
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/nexa_bold"
+            android:textColor="@color/yellow"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvTitle"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            tools:text="8.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGenres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/tvTypeLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_genre_teal" />
+
+        <TextView
+            android:id="@+id/tvTypeLabel"
+            style="@style/ShowItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Type:"
+            app:layout_constraintBottom_toTopOf="@id/tvLanguageLabel"
+            app:layout_constraintStart_toStartOf="@id/rvGenres"
+            app:layout_constraintTop_toBottomOf="@id/rvGenres" />
+
+        <TextView
+            android:id="@+id/tvType"
+            style="@style/ShowItemText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTypeLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvTypeLabel"
+            app:layout_constraintTop_toTopOf="@id/tvTypeLabel"
+            tools:text="Nates" />
+
+        <TextView
+            android:id="@+id/tvLanguageLabel"
+            style="@style/ShowItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Language:"
+            app:layout_constraintBottom_toTopOf="@id/tvStatusLabel"
+            app:layout_constraintStart_toStartOf="@id/tvTypeLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvTypeLabel" />
+
+        <TextView
+            android:id="@+id/tvLanguage"
+            style="@style/ShowItemText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvLanguageLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvLanguageLabel"
+            app:layout_constraintTop_toTopOf="@id/tvLanguageLabel"
+            tools:text="Nates" />
+
+        <TextView
+            android:id="@+id/tvStatusLabel"
+            style="@style/ShowItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Status:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvLanguageLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvLanguageLabel" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            style="@style/ShowItemText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvStatusLabel"
+            app:layout_constraintTop_toTopOf="@id/tvStatusLabel"
+            tools:text="Actor1, Actor2, Actor3, Actor4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivFavorite"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="6dp"
+        android:src="@drawable/selector_heart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
