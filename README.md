@@ -1,6 +1,6 @@
 # Shows
 
-The app is separated into 2 modules and uses **MVI** architecture.
+The app is separated into 5 modules (:app, :common, :core, :feature:show, :util) and uses **MVI** architecture.
 
 Under the hood the app uses **Hilt** for dependency injection, **Kotlin flow and coroutines** for asynchronously support, **DataStore** for saving data, **Navigation Component** for natigating between fragments
 
