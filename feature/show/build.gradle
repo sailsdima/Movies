@@ -1,22 +1,22 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
     compileSdkVersion 31
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.twmaze.movies"
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -32,16 +32,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    lintOptions {
-        abortOnError false
-        disable 'ContentDescription', 'VectorPath', 'Overdraw', 'IconXmlAndPng'
-    }
 }
 
 dependencies {
-    implementation project(path: ':feature:show')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation project(path: ':core')
+    implementation project(path: ':common')
+    implementation project(path: ':util')
+
     implementation "androidx.core:core-ktx:$core_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     testImplementation 'junit:junit:4.+'
@@ -49,8 +47,26 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
     implementation "com.jakewharton.timber:timber:$timber_version"
 
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
+
     // dagger - Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
+    // Nav
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    // paging
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 }

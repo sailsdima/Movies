@@ -1,3 +1,8 @@
 include ':app'
 rootProject.name = "Movies"
 include ':util'
+include ':core'
+include ':feature:shows_list:myapplication'
+include ':common'
+include ':feature:show'
+include ':navigation'
